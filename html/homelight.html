@@ -1,0 +1,2283 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Mi tienda Online</title>
+
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100italic,300italic,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="fonts/nueva/style.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/botones.css">
+    <link rel="stylesheet" type="text/css" href="css/ecommercelight.css">
+    <!--[if lt IE 9]>
+  <script src="dist/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <!--Cabecera-->
+        <header class="row">
+            <!--Inicio de navegación-->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <!--Logo-->
+                        <div class="logo">
+                            <img class="img-responsive" src="img/Logo.png" alt="">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                                <?php bloginfo( 'name' ); ?>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+
+
+                            </li>
+
+                            <li class="dropdown">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle menu-toggle" data-toggle="dropdown">
+                      Productos <b class="caret"></b>
+                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Something else here</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Separated link</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">One more separated link</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li></li>
+                        </ul>
+                        <form role="search" method="get" class="navbar-form navbar-left" role="search" action="<?php echo home_url( '/' ); ?>">
+                            <label>
+                                <input type="search" class="form-control" placeholder="Busca un producto …" value="" name="s" title="Search for:" />
+                                <input type="hidden" name="post_type" value="product">
+                            </label>
+                            <input type="submit" class="btn btn-default search-submit" value="Buscar" />
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-shopping-cart blanco"></span>
+                                    Carrito
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="modal" data-target=".bs-example-modal-sm" href="#">Inicia sesión</a>
+                            </li>
+                            <li>
+                                <a data-toggle="modal" data-target="#myModal" href="#">Registrarte</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+        <!--Final de la cabecera-->
+
+
+        <!--Modal Inicio de sesión-->
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Iniciar sesión</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form class="form" role="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">Remember me</label>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Iniciar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fin Modal Inicio de sesión-->
+
+        <!--Modal Registro-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Registrate</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Repetir Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repetir Password">
+                            </div>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">Check me out</label>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Registrarme</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fin Modal Registro-->
+
+        <!--AIDA-->
+        <section class="row container">
+
+            <div class="page-header">
+                <h2 class="text-center">
+                                  Mi tienda en linea la mejor tienda del mundo mundial,
+                                  <small>
+                                    sin mayor complicación del fabricante directo a tus manos en un solo click.
+                                  </small>
+                                </h2>
+            </div>
+
+
+
+            <section class="row thumbnails">
+
+                <article class="col-xs-12 col-sm-12 col-md-6 box">
+                    <img class="img-thumbnail box img-responsive large" src="img/DeathtoStock_Creative%20Community1.jpg">
+                </article>
+                <article class="col-xs-12 col-sm-6 col-md-3 box">
+                    <img class="img-thumbnail box img-responsive" src="img/DeathtoStock_Creative%20Community6.jpg">
+                </article>
+                <article class="col-xs-12 col-sm-6 col-md-3 box">
+                    <img class="img-thumbnail box img-responsive" src="img/DeathtoStock_Creative%20Community5.jpg">
+                </article>
+                <article class="col-xs-12 col-sm-6 col-md-3 box">
+                    <img class="img-thumbnail box img-responsive" src="img/DeathtoStock_Creative%20Community10.jpg">
+                </article>
+                <article class="col-xs-12 col-sm-6 col-md-3 box">
+                    <img class="img-thumbnail box img-responsive" src="img/DeathtoStock_Creative%20Community8.jpg">
+                </article>
+                <article class="col-xs-12 col-sm-12 col-md-6 box">
+                    <img class="img-thumbnail box img-responsive" src="img/DeathtoStock_Desk21.jpg">
+                </article>
+            </section>
+
+            <!--migas de pan-->
+
+            <section class="row container">
+                <ol class="breadcrumb">
+                    <!--coloca migas de pan -->
+                    <li>
+                        <a href="#">Home</a>
+                        <span class="divider">/</span>
+                    </li>
+                    <li>
+                        <a href="#">Ropa</a>
+                        <span class="divider">/</span>
+                    </li>
+                    <li class="active">Deportiva</li>
+                    <!--clase active siempre coloca los elementos con estado activo-->
+                </ol>
+            </section>
+
+            <!-- Fin migas de pan-->
+
+            <!--Tabs-->
+
+            <div class="bs-example bs-example-tabs">
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#home" data-toggle="tab">Nuevos</a>
+                    </li>
+                    <li class="">
+                        <a href="#profile" data-toggle="tab">Destacados</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">
+                                                Ofertas <b class="caret"></b>
+                                              </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                            <li>
+                                <a href="#dropdown1" tabindex="-1" data-toggle="tab">Promociones</a>
+                            </li>
+                            <li>
+                                <a href="#dropdown2" tabindex="-1" data-toggle="tab">Descuentos</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--Tabs-->
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="home">
+                        <section class="row">
+                            <!--Productos-->
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                        </section>
+
+                        <!--Final de productos principales-->
+                    </div>
+                    <div class="tab-pane fade" id="profile">
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                        </section>
+
+                        <!--Final de productos principales-->
+                    </div>
+                    <div class="tab-pane fade" id="dropdown1">
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                        </section>
+
+                        <!--Final de productos principales-->
+                    </div>
+                    <div class="tab-pane fade" id="dropdown2">
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+
+                        </section>
+
+                        <section class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-3 box">
+                                <img class="img-thumbnail box img-responsive" src="http://placehold.it/600x600">
+                                <!--esto pertenece a la imagen -->
+                                <h3 class="item-name">Item Name</h3>
+                                <h4 class="item-def">Short Item Description</h4>
+                                <!--etiqueta "i" coloca iconos de bootsptrap-->
+                                <!--la clase icon-star define el tipo de icono-->
+                                <!--la clase btn-group define botones agrupados-->
+                                <div class="btn-group boton-agregar">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-heart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-share-alt"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-gift"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning">
+                                        <small>USD</small>
+                                        <small>$</small>
+                                        11.99
+                                    </button>
+                                </div>
+                            </article>
+                        </section>
+
+                        <!--Final de productos principales-->
+                    </div>
+                </div>
+            </div>
+            <!--Paginación-->
+            <section class="row container">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                    <li>
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </section>
+            <!--Fin de Paginación-->
+            <footer>
+                <!--Landing footer-->
+                <section class="row thumbnails">
+
+                    <article class="col-xs-12 col-sm-12 col-md-6 box">
+                        <img class="img-thumbnail box img-responsive" src="http://placehold.it/555x214">
+                    </article>
+                    <article class="col-xs-12 col-sm-6 col-md-6 box">
+                        <img class="img-thumbnail box img-responsive" src="http://placehold.it/555x214">
+                    </article>
+                </section>
+                <!--Fin de Landing footer-->
+                <section class="row">
+                    <!--Esto es una cabecera con fila-->
+                    <hr>
+                </section>
+                <section class="row">
+                    <article class="col-md-3">
+                        <img class="box img-responsive" src="img/unnamed%20(3).jpg">
+                    </article>
+                    <article class="col-lg-3">
+                        <h4>
+                                                              Compra tu
+                                                              <small>Gift Card</small>
+                                                            </h4>
+                        <h5>Segundo titulo de mi articulo</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, aspernatur, modi repudiandae iste ipsum.
+                        </p>
+                        <div class="btn-group boton-agregar">
+                            <button type="button" class="btn btn-info">
+                                <small>Gift Card</small>
+                            </button>
+
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-gift oscuro"></span>
+                            </button>
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-credit-card oscuro"></span>
+                            </button>
+                            <button type="button" class="btn btn-warning">
+                                <small>$</small>
+                                100
+                            </button>
+                        </div>
+                    </article>
+                    <article class="col-md-3">
+                        <img class="box img-responsive" src="img/unnamed.png">
+                    </article>
+                    <article class="col-md-3">
+                        <h4>
+                                                                Zoom
+                                                                <small>Track</small>
+                                                              </h4>
+                        <h5>Segundo titulo de mi articulo</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, aspernatur, modi repudiandae iste ipsum.
+                        </p>
+                        <div class="btn-group boton-agregar">
+                            <button type="button" class="btn btn-info">
+                                <small>Tracking</small>
+                            </button>
+
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-road"></span>
+                            </button>
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-barcode"></span>
+                            </button>
+                            <button type="button" class="btn btn-warning">
+                                <span class="glyphicon glyphicon-map-marker"></span>
+                            </button>
+                        </div>
+                    </article>
+
+                </section>
+                <hr>
+                <section class="row">
+                    <article class="col-md-5">
+                        <h4>
+                                                                <b>Como calculamos tu envio</b>
+                                                              </h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, aspernatur, modi repudiandae iste ipsum.Deserunt, aspernatur, modi repudiandae iste ipsum.
+                        </p>
+                    </article>
+                    <div class="col-xs-3 col-md-2">
+                        <h5>
+                                                                <b>Servicio al cliente</b>
+                                                              </h5>
+                        <p>
+                            <a href="#">Envíos a USA, Venezuela y Colombia</a>
+                            <br>
+                            <a href="#">Servicio de Garantia</a>
+                            <br>
+                            <a href="#">Contact Info</a>
+                            <br>
+                            <a href="#">Etc..</a>
+                            <br>
+                            <a href="#">Etc..</a>
+                            <br>
+                        </p>
+                    </div>
+                    <article class="col-md-5">
+                        <h4>
+                                                                  <b>Politicas de Reembolso</b>
+                                                                </h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, aspernatur, modi repudiandae iste ipsumaspernatur, modi repudiandae iste ipsum.
+                        </p>
+                    </article>
+                </section>
+                <!-- row refiere a las filas , span a las columnas, seccion a las secciones, article a los articulos, aside a los elementos relacionados-->
+                <hr>
+    </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--<script src="http://code.jquery.com/jquery.js"></script>
+                                                        cdn-->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/classie.js"></script>
+    <script src="js/uiMorphingButton_inflow.js"></script>
+    <script src="js/uiMorphingButton_fixed.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
